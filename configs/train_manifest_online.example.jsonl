@@ -1,0 +1,2 @@
+{"left":"data/sample_000/left.png","right":"data/sample_000/right.png","texture":"data/sample_000/rgb.png","disparity":"data/sample_000/disparity.pfm","calibration":"calibration.json","rt":"rt_left_to_texture.json"}
+{"left":"data/sample_001/left.png","right":"data/sample_001/right.png","texture":"data/sample_001/rgb.png","disparity":"data/sample_001/disparity.pfm","calibration":"calibration.json","rt":"rt_left_to_texture.json"}

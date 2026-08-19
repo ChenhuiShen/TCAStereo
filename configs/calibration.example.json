@@ -1,0 +1,18 @@
+{
+  "K_left": [
+    [612.4, 0.0, 319.8],
+    [0.0, 612.1, 255.7],
+    [0.0, 0.0, 1.0]
+  ],
+  "K_texture": [
+    [925.3, 0.0, 639.2],
+    [0.0, 924.8, 359.5],
+    [0.0, 0.0, 1.0]
+  ],
+  "baseline": 50.0,
+  "length_unit": "mm",
+  "left_image_size": [640, 512],
+  "texture_image_size": [1280, 1024],
+  "disparity_offset": 0.0,
+  "disparity_sign": 1.0
+}
