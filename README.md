@@ -1,6 +1,6 @@
 # TCAStereo：三相机主动双目 + 单目先验融合
 
-本工程在原有 SpeckleStereo 双目网络上实现论文中的完整三相机数据流：
+完整三相机数据流：
 
 - 第三台 RGB/纹理相机通过外部 RT 与左红外相机建立坐标变换；
 - GEM 在 1/4、1/8、1/16、1/32 四尺度用高斯高通、FFT 和 4 个可学习复数频域核增强几何结构；
@@ -8,7 +8,6 @@
 - FIU 在每次循环更新中，用对齐后的单目深度生成空间注意力，对原 stereo residual disparity 进行门控；
 - Depth Anything V2 使用官方源码和冻结权重，支持在线推理或离线缓存单目深度。
 
-原来的 `core/Speckle_Stereo.py` 保持不变；论文实现入口是 `core/TCAStereo.py`，因此已有纯双目流程仍可继续使用。
 
 ## 目录
 
@@ -36,10 +35,6 @@ pip install -r requirements.txt
 ```
 
 工程已经包含官方 Depth Anything V2 源码，但不包含大模型权重。下载论文使用的 ViT-L：
-
-```powershell
-powershell -ExecutionPolicy Bypass -File scripts/download_depth_anything_v2.ps1 -Encoder vitl
-```
 
 ViT-S 权重采用 Apache-2.0；ViT-B/ViT-L 权重采用 CC-BY-NC-4.0。工业商业部署前请按官方许可重新确认使用范围。
 
@@ -107,7 +102,7 @@ python train_tca.py `
   --image-size 256 512 `
   --batch-size 4 `
   --train-iters 22 `
-  --num-steps 80000 `
+  --num-steps 20000 `
   --mixed-precision
 ```
 
@@ -118,7 +113,6 @@ python train_tca.py `
 ## 5. 测试
 
 ```powershell
-python -m unittest discover -s tests -v
 python -m py_compile core/TCAStereo.py core/tca/*.py train_tca.py infer_tca.py
 ```
 
