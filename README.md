@@ -1,4 +1,4 @@
-# TCAStereo: Tri-Camera Active Stereo with Monocular Prior Fusion
+# TCAStereo
 
 Complete tri-camera data flow:
 
